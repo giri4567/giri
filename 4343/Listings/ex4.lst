@@ -1,0 +1,44 @@
+A51 MACRO ASSEMBLER  EX4                                                                  08/23/2019 09:35:20 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\ex4.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE ex4.asm SET(SMALL) DEBUG PRINT(.\Listings\ex4.lst) OBJECT(.\Objects\ex4
+                      .obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 7850              2     MOV R0,#50H
+0002 7900              3     MOV R1,#00H
+0004 7A00              4     MOV R2,#00H
+0006 7B08              5     MOV R3,#08H
+0008 E6                6     MOV A, @R0
+0009 13                7     LOOP3:RRC A
+000A 5003              8     JNC LOOP1
+000C 0A                9     INC R2
+000D 8001             10     SJMP LOOP2
+000F 09               11     LOOP1:INC R1
+0010 DBF7             12     LOOP2:DJNZ R3,LOOP3
+0012 8980             13     MOV P0,R1
+0014 8A90             14     MOV P1,R2
+                      15     END
+A51 MACRO ASSEMBLER  EX4                                                                  08/23/2019 09:35:20 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+LOOP1. . . . . . .  C ADDR   000FH   A   
+LOOP2. . . . . . .  C ADDR   0010H   A   
+LOOP3. . . . . . .  C ADDR   0009H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

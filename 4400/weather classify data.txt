@@ -1,0 +1,73 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     weather
+Instances:    100
+Attributes:   5
+              outlook
+              temperature
+              humidity
+              windy
+              play
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+humidity = high
+|   outlook = overcast
+|   |   temperature = hot: yes (6.0)
+|   |   temperature = cool: yes (0.0)
+|   |   temperature = mild
+|   |   |   windy = FALSE: no (6.0)
+|   |   |   windy = TRUE: yes (7.0/1.0)
+|   |   temperature = cold: yes (0.0)
+|   outlook = rainy
+|   |   windy = FALSE: yes (6.0)
+|   |   windy = TRUE: no (6.0)
+|   outlook = sunny: no (19.0)
+humidity = normal
+|   outlook = overcast: yes (14.0)
+|   outlook = rainy
+|   |   windy = FALSE: yes (12.0)
+|   |   windy = TRUE
+|   |   |   temperature = hot: yes (0.0)
+|   |   |   temperature = cool: no (6.0)
+|   |   |   temperature = mild: yes (0.0)
+|   |   |   temperature = cold: yes (6.0)
+|   outlook = sunny: yes (12.0)
+
+Number of Leaves  : 	15
+
+Size of the tree : 	23
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          95               95      %
+Incorrectly Classified Instances         5                5      %
+Kappa statistic                          0.8911
+Mean absolute error                      0.0661
+Root mean squared error                  0.2116
+Relative absolute error                 14.0042 %
+Root relative squared error             43.5652 %
+Total Number of Instances              100     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    0.132    0.925      1.000    0.961      0.896    0.964     0.965     yes
+                 0.868    0.000    1.000      0.868    0.930      0.896    0.964     0.954     no
+Weighted Avg.    0.950    0.082    0.954      0.950    0.949      0.896    0.964     0.960     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 62  0 |  a = yes
+  5 33 |  b = no
+
